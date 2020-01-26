@@ -5,13 +5,27 @@ import (
 	"github.com/c-bata/go-prompt"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
-	"os"
 	"strings"
 )
 
 func main() {
-	p := prompt.New(executor, completer)
-	p.Run()
+	preRootCmd := &cobra.Command{
+		Use: "GoDeep",
+		Run: func(cmd *cobra.Command, args []string) {
+			ResetSubCommands()
+
+			cmd.Flag(FlagInteractive).Value.String()
+			if v, _ := cmd.Flags().GetBool(FlagInteractive); v {
+				p := prompt.New(executor, completer)
+				p.Run()
+			} else {
+				RootCmd.SetArgs(args)
+				_ = RootCmd.Execute()
+			}
+		},
+	}
+	preRootCmd.Flags().Bool(FlagInteractive, false, "enable interactive mode")
+	_ = preRootCmd.Execute()
 }
 
 func executor(s string) {
@@ -68,9 +82,8 @@ func completer(d prompt.Document) []prompt.Suggest {
 
 var RootCmd = &cobra.Command{
 	Use: "Root",
-	PersistentPreRun: func(cmd *cobra.Command, args []string) {
-		cwd, _ := os.Getwd()
-		FindPackages(cwd)
+	Run: func(cmd *cobra.Command, args []string) {
+
 	},
 }
 
@@ -78,4 +91,5 @@ func init() {
 	fs := RootCmd.PersistentFlags()
 	fs.Bool(FlagSkipStandardLib, false, "skip go standard packages")
 	fs.Bool(FlagSkipVendor, false, "skip vendor packages")
+
 }

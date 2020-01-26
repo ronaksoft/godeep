@@ -17,4 +17,5 @@ const (
 const (
 	FlagSkipVendor      = "skip_vendor"
 	FlagSkipStandardLib = "skip_std"
+	FlagInteractive     = "interactive"
 )

@@ -1,10 +1,12 @@
 # github.com/c-bata/go-prompt v0.2.3
 github.com/c-bata/go-prompt
+# github.com/fatih/color v1.9.0
+github.com/fatih/color
 # github.com/inconshreveable/mousetrap v1.0.0
 github.com/inconshreveable/mousetrap
 # github.com/mattn/go-colorable v0.1.4
 github.com/mattn/go-colorable
-# github.com/mattn/go-isatty v0.0.10
+# github.com/mattn/go-isatty v0.0.11
 github.com/mattn/go-isatty
 # github.com/mattn/go-runewidth v0.0.8
 github.com/mattn/go-runewidth
@@ -19,8 +21,8 @@ github.com/spf13/pflag
 # golang.org/x/sys v0.0.0-20191120155948-bd437916bb0e
 golang.org/x/sys/unix
 # golang.org/x/tools v0.0.0-20200125223703-d33eef8e6825
-golang.org/x/tools/go/packages
 golang.org/x/tools/go/gcexportdata
-golang.org/x/tools/go/internal/packagesdriver
-golang.org/x/tools/internal/packagesinternal
 golang.org/x/tools/go/internal/gcimporter
+golang.org/x/tools/go/internal/packagesdriver
+golang.org/x/tools/go/packages
+golang.org/x/tools/internal/packagesinternal
