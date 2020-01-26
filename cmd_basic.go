@@ -129,7 +129,6 @@ func fillAllPackages(pkg *packages.Package, parents []string) {
 	}
 }
 func fillAllExportedItems(dirPath, pkgPath string) {
-	fmt.Println(dirPath, pkgPath)
 	fs := token.NewFileSet()
 	pkgs, err := parser.ParseDir(fs, dirPath, nil, parser.AllErrors)
 	if err != nil {
