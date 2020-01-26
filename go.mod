@@ -9,4 +9,5 @@ require (
 	github.com/pkg/term v0.0.0-20190109203006-aa71e9d9e942 // indirect
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5
+	golang.org/x/tools v0.0.0-20200125223703-d33eef8e6825
 )
