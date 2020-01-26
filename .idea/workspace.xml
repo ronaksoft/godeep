@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17cc6988-3f44-443d-820e-7a763d7ea7f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd_dev.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd_basic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd_basic.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants.go" beforeDir="false" afterPath="$PROJECT_DIR$/constants.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.go" beforeDir="false" afterPath="$PROJECT_DIR$/package.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statics.go" beforeDir="false" afterPath="$PROJECT_DIR$/statics.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/isatty_plan9.go" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/isatty_plan9.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkasm_darwin.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkpost.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksyscall.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksyscall_aix_ppc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksyscall_aix_ppc64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksyscall_solaris.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysctl_openbsd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_aix.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_darwin.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_dragonfly.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_freebsd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_netbsd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_openbsd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_solaris.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/golang.org/x/tools/go/gcexportdata/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/modules.txt" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/modules.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,5 +90,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1580018915417" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1580038981808">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1580038981808" />
   </component>
 </project>

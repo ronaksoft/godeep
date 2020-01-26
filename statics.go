@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/fatih/color"
 	"golang.org/x/tools/go/packages"
 	"os"
 	"path/filepath"
@@ -31,7 +32,7 @@ func FindPackages(rootPath string) (map[string]*packages.Package, error) {
 			return nil
 		}
 		if len(pkg) > 0 {
-			allPackages[pkg[0].PkgPath] = pkg[0]
+			allPackages[path] = pkg[0]
 		}
 		return nil
 	})
@@ -39,4 +40,17 @@ func FindPackages(rootPath string) (map[string]*packages.Package, error) {
 		return nil, err
 	}
 	return allPackages, nil
+}
+
+func PrintOnErr(err error, extra ...interface{}) {
+	if err != nil {
+		color.Red("PrintOnErr:: %s (%v)", err.Error(), extra)
+	}
+}
+
+func PanicOnErr(err error, extra ...interface{}) {
+	if err != nil {
+		color.Red("PrintOnErr:: %s (%v)", err.Error(), extra)
+		os.Exit(1)
+	}
 }

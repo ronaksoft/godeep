@@ -12,8 +12,6 @@ func main() {
 	preRootCmd := &cobra.Command{
 		Use: "GoDeep",
 		Run: func(cmd *cobra.Command, args []string) {
-			ResetSubCommands()
-
 			cmd.Flag(FlagInteractive).Value.String()
 			if v, _ := cmd.Flags().GetBool(FlagInteractive); v {
 				p := prompt.New(executor, completer)
@@ -91,5 +89,7 @@ func init() {
 	fs := RootCmd.PersistentFlags()
 	fs.Bool(FlagSkipStandardLib, false, "skip go standard packages")
 	fs.Bool(FlagSkipVendor, false, "skip vendor packages")
+	fs.String(FlagOutputDir, "./", "generated file will be stored here")
+	fs.String(FlagInputDir, "./", "default place to look for files")
 
 }

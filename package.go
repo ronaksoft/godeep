@@ -20,4 +20,7 @@ type Package struct {
 	DirectImportedPackages []string
 	ImportedPackages       []string
 	ImportedByPackages     []string
+	ExportedTypes          []string
+	ExportedVariables      []string
+	ExportedFunctions      []string
 }

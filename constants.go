@@ -18,4 +18,6 @@ const (
 	FlagSkipVendor      = "skip_vendor"
 	FlagSkipStandardLib = "skip_std"
 	FlagInteractive     = "interactive"
+	FlagOutputDir       = "output_dir"
+	FlagInputDir        = "input_dir"
 )
