@@ -91,8 +91,14 @@ func (a *Packages) GetByPackage(pkg *packages.Package) *Package {
 	p := a.GetByPath(pkg.PkgPath)
 	if p == nil {
 		p = &Package{
-			Name: pkg.Name,
-			Path: pkg.PkgPath,
+			Name:                   pkg.Name,
+			Path:                   pkg.PkgPath,
+			DirectImportedPackages: make(map[string]struct{}),
+			ImportedByPackages:     make(map[string]struct{}),
+			ImportedPackages:       make(map[string]struct{}),
+			ExportedVariables:      make(map[string]struct{}),
+			ExportedFunctions:      make(map[string]struct{}),
+			ExportedTypes:          make(map[string]struct{}),
 		}
 		a.mtx.Lock()
 		a.m[pkg.PkgPath] = p

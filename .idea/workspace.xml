@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17cc6988-3f44-443d-820e-7a763d7ea7f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_packages.json" beforeDir="false" afterPath="$PROJECT_DIR$/all_packages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/godeep/cmd_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/cmd_basic.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/godeep/package.go" beforeDir="false" afterPath="$PROJECT_DIR$/godeep/package.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
