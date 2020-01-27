@@ -3,16 +3,20 @@ package main
 import (
 	"fmt"
 	"github.com/c-bata/go-prompt"
+	"github.com/ronaksoft/godeep/godeep"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"strings"
+)
+
+var (
+	AllPackages = godeep.InitPackages()
 )
 
 func main() {
 	preRootCmd := &cobra.Command{
 		Use: "GoDeep",
 		Run: func(cmd *cobra.Command, args []string) {
-			cmd.Flag(FlagInteractive).Value.String()
 			if v, _ := cmd.Flags().GetBool(FlagInteractive); v {
 				p := prompt.New(executor, completer)
 				p.Run()

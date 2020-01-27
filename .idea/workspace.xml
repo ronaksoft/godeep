@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17cc6988-3f44-443d-820e-7a763d7ea7f6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmd_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd_basic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmd/godeep/statics.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/godeep/package.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/cmd_basic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constants.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/constants.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/statics.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +60,13 @@
     <property name="go.vendoring.notification.had.been.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cmd/godeep" />
+      <recent name="$PROJECT_DIR$/cmd" />
+      <recent name="$PROJECT_DIR$/godeep" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
