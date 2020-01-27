@@ -135,35 +135,9 @@ func (a *Packages) Fill(pkg *packages.Package) {
 				if x.Name.IsExported() {
 					fn := strings.Builder{}
 					fn.WriteString(x.Name.Name)
-					fn.WriteRune('(')
-					for idx, p := range x.Type.Params.List {
-						for idx, n := range p.Names {
-							fn.WriteString(n.Name)
-							if idx < len(p.Names)-1 {
-								fn.WriteString(", ")
-							}
-						}
-						fn.WriteRune(' ')
-						switch xx := p.Type.(type) {
-						case *ast.Ident:
-							fn.WriteString(xx.Name)
-						case *ast.Ellipsis:
-							fn.WriteString("...")
-							switch xxx := xx.Elt.(type) {
-							case *ast.InterfaceType:
-								fn.WriteString("interface{}")
-							case *ast.Ident:
-								fn.WriteString(xxx.Name)
-							}
-						}
-						if idx < len(x.Type.Params.List)-1 {
-							fn.WriteString(", ")
-						}
-					}
-					fn.WriteRune(')')
+					fn.WriteString(astFuncType(x.Type))
 					p.ExportedFunc(fn.String())
 				}
-
 			case *ast.ValueSpec:
 				for _, n := range x.Names {
 					if n.IsExported() {
