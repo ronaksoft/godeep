@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17cc6988-3f44-443d-820e-7a763d7ea7f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stringer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_packages.json" beforeDir="false" afterPath="$PROJECT_DIR$/all_packages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.go" beforeDir="false" afterPath="$PROJECT_DIR$/package.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stringer.go" beforeDir="false" afterPath="$PROJECT_DIR$/stringer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +93,10 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="341" y="164" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1580018915417" />
+    <state x="498" y="282" width="683" height="486" key="find.popup" timestamp="1580112441114">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="498" y="282" width="683" height="486" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1580112441114" />
     <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1580038981808">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

@@ -77,6 +77,7 @@ func astFuncType(x *ast.FuncType) string {
 func astSelectorExpr(x *ast.SelectorExpr) string {
 	sb := strings.Builder{}
 	sb.WriteString(astExpr(x.X))
+	sb.WriteRune('.')
 	sb.WriteString(astIdent(x.Sel))
 	return sb.String()
 }
