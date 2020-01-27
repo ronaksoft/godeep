@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/fatih/color"
-	"github.com/ronaksoft/godeep/godeep"
+	"github.com/ronaksoft/godeep"
 	"github.com/spf13/cobra"
 	"io/ioutil"
 	"os"

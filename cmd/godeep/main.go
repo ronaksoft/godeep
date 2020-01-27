@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/c-bata/go-prompt"
-	"github.com/ronaksoft/godeep/godeep"
+	"github.com/ronaksoft/godeep"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"strings"
@@ -70,7 +70,7 @@ func completer(d prompt.Document) []prompt.Suggest {
 
 	} else {
 		for _, cmd := range currCmd.Commands() {
-			if strings.HasPrefix(cmd.Name(), currWord) {
+			if strings.Contains(cmd.Name(), currWord) {
 				suggests = append(suggests, prompt.Suggest{
 					Text:        cmd.Name(),
 					Description: cmd.Short,

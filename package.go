@@ -229,12 +229,11 @@ func (p *Package) ExportedVar(name string) {
 }
 
 func (p *Package) Print() {
-	color.Green("==== %s ====", p.Name)
+	color.Green("========== %s (%s) ========", p.Name, p.Path)
 	printPackage(p)
 	printExportedItems(p)
 }
 func printPackage(pkg *Package) {
-	color.Green("%s:", pkg.Path)
 	color.Red("Imports: (%d)", len(pkg.DirectImportedPackages))
 	cnt := 0
 	for p := range pkg.DirectImportedPackages {
