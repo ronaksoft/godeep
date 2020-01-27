@@ -2,13 +2,11 @@ package godeep
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/fatih/color"
 	"go/ast"
 	"golang.org/x/tools/go/packages"
 	"os"
 	"path/filepath"
-	"reflect"
 	"strings"
 	"sync"
 )
@@ -22,7 +20,7 @@ import (
    Copyright Ronak Software Group 2018
 */
 
-func FindPackages(allPackages *Packages, rootPath string) error {
+func FindPackages(allPackages *Packages, rootPath string, onDone func(path string)) error {
 	allPackages.Reset()
 	waitGroup := sync.WaitGroup{}
 	rateLimit := make(chan struct{}, 50)
@@ -48,7 +46,9 @@ func FindPackages(allPackages *Packages, rootPath string) error {
 			}
 			for _, pkg := range pkgs {
 				allPackages.Fill(pkg)
-				fmt.Println(fmt.Sprintf("Package '%s' analyzed.", path))
+				if onDone != nil {
+					onDone(path)
+				}
 			}
 			return
 		}(path, info, err)
@@ -119,7 +119,7 @@ func (a *Packages) Fill(pkg *packages.Package) {
 		}
 	}
 	for _, f := range pkg.Syntax {
-		for n, o := range f.Scope.Objects {
+		for _, o := range f.Scope.Objects {
 			switch x := o.Decl.(type) {
 			case *ast.TypeSpec:
 				if x.Name.IsExported() {
@@ -166,7 +166,6 @@ func (a *Packages) Fill(pkg *packages.Package) {
 				}
 
 			default:
-				fmt.Println(n, reflect.TypeOf(o.Decl))
 			}
 
 		}
@@ -187,44 +186,39 @@ type Package struct {
 	mtx                    sync.Mutex
 	Name                   string
 	Path                   string
-	DirectImports          int
-	TotalImports           int
-	ImportedBy             int
-	DirectImportedPackages []string
-	ImportedPackages       []string
-	ImportedByPackages     []string
-	ExportedTypes          []string
-	ExportedVariables      []string
-	ExportedFunctions      []string
+	DirectImportedPackages map[string]struct{}
+	ImportedPackages       map[string]struct{}
+	ImportedByPackages     map[string]struct{}
+	ExportedTypes          map[string]struct{}
+	ExportedVariables      map[string]struct{}
+	ExportedFunctions      map[string]struct{}
 }
 
 func (p *Package) Import(pkg *Package) {
 	p.mtx.Lock()
-	p.DirectImportedPackages = append(p.DirectImportedPackages, pkg.Path)
-	p.DirectImports++
+	p.DirectImportedPackages[pkg.Path] = struct{}{}
 	p.mtx.Unlock()
 
 	pkg.mtx.Lock()
-	pkg.ImportedBy++
-	pkg.ImportedByPackages = append(pkg.ImportedByPackages, pkg.Path)
+	pkg.ImportedByPackages[p.Path] = struct{}{}
 	pkg.mtx.Unlock()
 }
 
 func (p *Package) ExportedFunc(name string) {
 	p.mtx.Lock()
-	p.ExportedFunctions = append(p.ExportedFunctions, name)
+	p.ExportedFunctions[name] = struct{}{}
 	p.mtx.Unlock()
 }
 
 func (p *Package) ExportedType(name string) {
 	p.mtx.Lock()
-	p.ExportedTypes = append(p.ExportedTypes, name)
+	p.ExportedTypes[name] = struct{}{}
 	p.mtx.Unlock()
 }
 
 func (p *Package) ExportedVar(name string) {
 	p.mtx.Lock()
-	p.ExportedVariables = append(p.ExportedVariables, name)
+	p.ExportedVariables[name] = struct{}{}
 	p.mtx.Unlock()
 }
 
@@ -235,15 +229,15 @@ func (p *Package) Print() {
 }
 func printPackage(pkg *Package) {
 	color.Green("%s:", pkg.Path)
-	color.Red("Imports: (%d)", pkg.DirectImports)
+	color.Red("Imports: (%d)", len(pkg.DirectImportedPackages))
 	cnt := 0
-	for _, p := range pkg.DirectImportedPackages {
+	for p := range pkg.DirectImportedPackages {
 		cnt++
 		color.Red("\t %d. %s", cnt, p)
 	}
-	color.HiBlue("Imported By: (%d)", pkg.ImportedBy)
+	color.HiBlue("Imported By: (%d)", len(pkg.ImportedByPackages))
 	cnt = 0
-	for _, p := range pkg.ImportedByPackages {
+	for p := range pkg.ImportedByPackages {
 		cnt++
 		color.HiBlue("\t %d. %s", cnt, p)
 	}
@@ -251,19 +245,19 @@ func printPackage(pkg *Package) {
 func printExportedItems(pkg *Package) {
 	color.HiMagenta("Exported Functions: (%d)", len(pkg.ExportedFunctions))
 	cnt := 0
-	for _, p := range pkg.ExportedFunctions {
+	for p := range pkg.ExportedFunctions {
 		cnt++
 		color.HiMagenta("\t %d. %s", cnt, p)
 	}
 	color.HiGreen("Exported Types: (%d)", len(pkg.ExportedTypes))
 	cnt = 0
-	for _, p := range pkg.ExportedTypes {
+	for p := range pkg.ExportedTypes {
 		cnt++
 		color.HiGreen("\t %d. %s", cnt, p)
 	}
 	color.HiRed("Exported Variables: (%d)", len(pkg.ExportedVariables))
 	cnt = 0
-	for _, p := range pkg.ExportedVariables {
+	for p := range pkg.ExportedVariables {
 		cnt++
 		color.HiRed("\t %d. %s", cnt, p)
 	}

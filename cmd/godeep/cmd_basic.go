@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/fatih/color"
 	"github.com/ronaksoft/godeep/godeep"
 	"github.com/spf13/cobra"
 	"io/ioutil"
@@ -76,13 +77,17 @@ var CmdAnalyze = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Please be patient, this may take a bit longer than you think ...")
 		cwd, _ := os.Getwd()
-		err := godeep.FindPackages(AllPackages, cwd)
+		err := godeep.FindPackages(AllPackages, cwd, func(path string) {
+			fmt.Println(fmt.Sprintf("Package '%s' %s",
+				color.WhiteString("%s", path),
+				color.GreenString("analyzed"),
+			))
+		})
 		PanicOnErr(err)
-		fmt.Println("All Packages have been traversed, now we are building the relation")
+		color.HiGreen("All Packages have been traversed, now we are building the relation")
 		ResetCommands()
 	},
 }
-
 
 var CmdPrint = &cobra.Command{
 	Use: "print",

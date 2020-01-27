@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17cc6988-3f44-443d-820e-7a763d7ea7f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/godeep/statics.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/godeep/package.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/cmd_basic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/constants.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/statics.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/all_packages.json" beforeDir="false" afterPath="$PROJECT_DIR$/all_packages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/godeep/cmd_basic.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/godeep/cmd_basic.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/godeep/package.go" beforeDir="false" afterPath="$PROJECT_DIR$/godeep/package.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
