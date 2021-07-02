@@ -1,0 +1,57 @@
+{% code
+type jsonPackage struct {
+	Name string
+	Path string
+	Imported []string
+	ImportedBy []string
+	Funcs []string
+	Types []string
+}
+
+type jsonPackages struct {
+	Total int
+	Packages []jsonPackage
+}
+%}
+
+// JSON marshaling
+{% stripspace %}
+{% func (d *jsonPackages) JSON() %}
+{
+	"packages": [
+		{% for i, r := range d.Packages %}
+		    {
+            	"name": {%q= r.Name %},
+            	"path": {%q= r.Path %},
+            	"imported":[
+            		{% for i, rr := range r.Imported %}
+            		    {%q= rr %}
+            			{% if i + 1 < len(r.Imported) %},{% endif %}
+            		{% endfor %}
+            	],
+            	"importedBy":[
+                    {% for i, rr := range r.ImportedBy %}
+                        {%q= rr %}
+                        {% if i + 1 < len(r.ImportedBy) %},{% endif %}
+                    {% endfor %}
+                ],
+                "exported_funcs":[
+                    {% for i, rr := range r.Funcs %}
+                        {%q= rr %}
+                        {% if i + 1 < len(r.Funcs) %},{% endif %}
+                    {% endfor %}
+                ],
+                "exported_types":[
+                    {% for i, rr := range r.Types %}
+                        {%q= rr %}
+                        {% if i + 1 < len(r.Types) %},{% endif %}
+                    {% endfor %}
+                ],
+
+            }
+			{% if i + 1 < len(d.Packages) %},{% endif %}
+		{% endfor %}
+	]
+}
+{% endfunc %}
+{% endstripspace %}

@@ -91,8 +91,6 @@ var RootCmd = &cobra.Command{
 
 func init() {
 	fs := RootCmd.PersistentFlags()
-	fs.Bool(FlagSkipStandardLib, false, "skip go standard packages")
-	fs.Bool(FlagSkipVendor, false, "skip vendor packages")
 	fs.String(FlagOutputDir, "./", "generated file will be stored here")
 	fs.String(FlagInputDir, "./", "default place to look for files")
 

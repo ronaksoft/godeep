@@ -9,15 +9,9 @@ package main
    Copyright Ronak Software Group 2018
 */
 
-const (
-	baseUrl = "https://v2.blipapi.xyz"
-)
-
 // Flag Names
 const (
-	FlagSkipVendor      = "skip_vendor"
-	FlagSkipStandardLib = "skip_std"
-	FlagInteractive     = "interactive"
-	FlagOutputDir       = "output_dir"
-	FlagInputDir        = "input_dir"
+	FlagInteractive = "interactive"
+	FlagOutputDir   = "output_dir"
+	FlagInputDir    = "input_dir"
 )

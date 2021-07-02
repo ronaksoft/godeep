@@ -18,9 +18,14 @@ github.com/pkg/term/termios
 github.com/spf13/cobra
 # github.com/spf13/pflag v1.0.5
 github.com/spf13/pflag
-# golang.org/x/sys v0.0.0-20191120155948-bd437916bb0e
+# github.com/valyala/bytebufferpool v1.0.0
+github.com/valyala/bytebufferpool
+# github.com/valyala/quicktemplate v1.6.3
+github.com/valyala/quicktemplate
+# golang.org/x/sys v0.0.0-20200602225109-6fdc65e7d980
+golang.org/x/sys/internal/unsafeheader
 golang.org/x/sys/unix
-# golang.org/x/tools v0.0.0-20200125223703-d33eef8e6825
+# golang.org/x/tools v0.0.0-20200207183749-b753a1ba74fa
 golang.org/x/tools/go/gcexportdata
 golang.org/x/tools/go/internal/gcimporter
 golang.org/x/tools/go/internal/packagesdriver

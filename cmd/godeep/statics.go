@@ -14,8 +14,6 @@ import (
    Copyright Ronak Software Group 2018
 */
 
-
-
 func PrintOnErr(err error, extra ...interface{}) {
 	if err != nil {
 		color.Red("PrintOnErr:: %s (%v)", err.Error(), extra)

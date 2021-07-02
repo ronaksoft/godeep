@@ -20,7 +20,7 @@ import (
 */
 
 func init() {
-	RootCmd.AddCommand(CmdAnalyze, CmdPrint, CmdImport, CmdExport)
+	RootCmd.AddCommand(CmdAnalyze, CmdPrint, CmdImport, CmdExport, CmdExit)
 }
 
 func ResetCommands() {
@@ -77,12 +77,14 @@ var CmdAnalyze = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Please be patient, this may take a bit longer than you think ...")
 		cwd, _ := os.Getwd()
-		err := godeep.FindPackages(AllPackages, cwd, func(path string) {
-			fmt.Println(fmt.Sprintf("Package '%s' %s",
-				color.WhiteString("%s", path),
-				color.GreenString("analyzed"),
-			))
-		})
+		err := godeep.FindPackages(AllPackages, cwd,
+			func(path string) {
+				fmt.Println(fmt.Sprintf("Package '%s' %s",
+					color.WhiteString("%s", path),
+					color.GreenString("analyzed"),
+				))
+			},
+		)
 		PanicOnErr(err)
 		color.HiGreen("All Packages have been traversed, now we are building the relation")
 		ResetCommands()
@@ -105,5 +107,12 @@ var CmdPrint = &cobra.Command{
 			})
 		}
 
+	},
+}
+
+var CmdExit = &cobra.Command{
+	Use: "exit",
+	Run: func(cmd *cobra.Command, args []string) {
+		os.Exit(0)
 	},
 }
